@@ -1,4 +1,9 @@
 * {
     overflow-x: hidden;
+
 }
 
+.App{
+    height: 100vh;
+
+}

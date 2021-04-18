@@ -8,11 +8,19 @@ class SearchContainer extends React.Component {
     render() {
         return(
             <div>
-                <Search getWeatherCity={this.props.getWeatherCity}/>
-                
+                <Search
+                    isWarning={this.props.isWarning}
+                    getWeatherCity={this.props.getWeatherCity}
+                    isPuls={this.props.isPuls}
+                    />
             </div>
         )
     }
 }
 
-export default connect(null, {getWeatherCity})(SearchContainer)
+const mapStateToProps = (state) => ({
+    isPuls: state.app.isPuls,
+    isWarning: state.app.isWarning
+})
+
+export default connect(mapStateToProps, {getWeatherCity})(SearchContainer)

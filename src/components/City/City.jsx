@@ -114,11 +114,14 @@ export const City = (props) => {
 				</div>
 				
 			</div>
+			<div>
 			{editMode && <CityMore
+				preloader={props.preloader}
 				name={props.name}
 				moreInfoCity={props.moreInfoCity}
 				setEditMode={setEditMode}
 			/>}
+			</div>
 		</>
   	)
 };

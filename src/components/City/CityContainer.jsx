@@ -9,6 +9,7 @@ class CityContainer extends React.Component{
     return(
       <>
         {this.props.weatherCity.map(city => <City 
+            preloader={this.props.preloader}
             deleteCity={this.props.deleteCity}
             name={city.name}
             main={city.main}
@@ -27,7 +28,8 @@ class CityContainer extends React.Component{
 
 let mapStateToPropsType = (state) => ({
   weatherCity: state.app.weatherCity,
-  moreInfoCity: state.app.moreInfoCity
+  moreInfoCity: state.app.moreInfoCity,
+  preloader: state.app.preloader
 })
 
 export default connect(mapStateToPropsType, {deleteCity, getWeatherCityMore})(CityContainer)
