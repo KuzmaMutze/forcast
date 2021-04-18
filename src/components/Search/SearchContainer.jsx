@@ -9,7 +9,7 @@ class SearchContainer extends React.Component {
         return(
             <div>
                 <Search getWeatherCity={this.props.getWeatherCity}/>
-            
+                
             </div>
         )
     }

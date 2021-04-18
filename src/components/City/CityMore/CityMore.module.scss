@@ -1,0 +1,41 @@
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    background: linear-gradient(350deg, rgba(2,0,36,.5) 0%, rgba(19,19,209,0.5) 41%, rgba(0,212,255,0.5) 100%);
+    backdrop-filter: blur(8px);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title{
+    font-weight: 600;
+    font-size: 50px;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.container{
+    margin: 15px 100px 80px;
+}
+
+.btn_close{
+    position: absolute;
+    top: 40px;
+    right: 60px;
+}
+
+.box_title{
+    text-align: center;
+    font-weight: 500;
+    font-size: 40px;
+    margin: 20px 0 15px 0;
+}
+
+.box_day{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}

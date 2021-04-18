@@ -2,6 +2,7 @@ import classes from "./City.module.scss";
 import { Button, IconButton } from "@material-ui/core";
 import React, { useState } from "react"
 import CloseIcon from '@material-ui/icons/Close';
+// ICONS
 import img1 from "../../img/01d.png";
 import img2 from "../../img/01n.png";
 import img3 from "../../img/02d.png";
@@ -20,6 +21,7 @@ import img15 from "../../img/13d.png";
 import img16 from "../../img/13n.png";
 import img17 from "../../img/50d.png";
 import img18 from "../../img/50n.png";
+import { CityMore } from "./CityMore/CityMore";
 
 
 export const City = (props) => {
@@ -87,23 +89,37 @@ export const City = (props) => {
 	let temp = Math.ceil(props.main.temp)
 	let feels_like = Math.ceil(props.main.feels_like)
 
-	
+	let [editMode, setEditMode] = useState(false)
+
+	let required = () => {
+		props.getWeatherCityMore(props.name)
+		setEditMode(true)
+	}
+
 	return (
-		<div className={classes.City__wrapper}>
-			<div className={classes.btn_close}><IconButton style={{boxShadow: "none"}} onClick={() => {props.deleteCity(props.id)}} color="secondary"><CloseIcon/></IconButton></div>
-			<div className={classes.city_name}>{props.name}</div>
-			<div className={classes.btn_more}><Button>Нажмите для подробного прогноза</Button></div>
-			<div className={classes.box_temp}>
-				<img className={classes.icon} src={img} alt=""/>
-				<span className={classes.temp}>
-					{temp} °C
-				</span>
+		<>
+			<div className={classes.City__wrapper}>
+				<div className={classes.btn_close}><IconButton style={{boxShadow: "none"}} onClick={() => {props.deleteCity(props.id)}} color="secondary"><CloseIcon/></IconButton></div>
+				<div className={classes.city_name}>{props.name}</div>
+				<div className={classes.btn_more}><Button onClick={() => required()}>Нажмите для подробного прогноза</Button></div>
+				<div className={classes.box_temp}>
+					<img className={classes.icon} src={img} alt=""/>
+					<span className={classes.temp}>
+						{temp} °C
+					</span>
+				</div>
+				<div className={classes.more_info}>
+					<div className={classes.desc}>{props.description}</div>
+					<div>Ощущается как: {feels_like} °C</div>
+				</div>
+				
 			</div>
-			<div className={classes.more_info}>
-				<div className={classes.desc}>{props.description}</div>
-				<div>Ощущается как: {feels_like} °C</div>
-			</div>
-		</div>
+			{editMode && <CityMore
+				name={props.name}
+				moreInfoCity={props.moreInfoCity}
+				setEditMode={setEditMode}
+			/>}
+		</>
   	)
 };
 

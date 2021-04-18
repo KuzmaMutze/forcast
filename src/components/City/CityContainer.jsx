@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { deleteCity } from "../../redux/app-reducer";
+import { deleteCity, getWeatherCityMore } from "../../redux/app-reducer";
 import { City } from "./City";
 
 class CityContainer extends React.Component{
@@ -17,6 +17,8 @@ class CityContainer extends React.Component{
             icon={city.weather[0].icon}
             description={city.weather[0].description}
             id={city.id}
+            getWeatherCityMore={this.props.getWeatherCityMore}
+            moreInfoCity={this.props.moreInfoCity}
         />)}
       </>
     )
@@ -24,7 +26,8 @@ class CityContainer extends React.Component{
 }
 
 let mapStateToPropsType = (state) => ({
-  weatherCity: state.app.weatherCity
+  weatherCity: state.app.weatherCity,
+  moreInfoCity: state.app.moreInfoCity
 })
 
-export default connect(mapStateToPropsType, {deleteCity})(CityContainer)
+export default connect(mapStateToPropsType, {deleteCity, getWeatherCityMore})(CityContainer)
