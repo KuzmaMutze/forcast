@@ -1,6 +1,6 @@
 # Приложение прогноза погоды React + Redux + Open Weather API
 
-## Потестить <a href="https://inspiring-yalow-31e775.netlify.app/">click</a>
+## Потестить <a href="https://serene-thompson-bd47e5.netlify.app/">click</a>
 
 ### Приложения для просмотра прогноза погоды. Определяет геолокацию и показывает погоду с помощью Open Weather API. Есть возможность поиск по городу и прогноз на ближайшие 5 дней для выбраного города.
 
