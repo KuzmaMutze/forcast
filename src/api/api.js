@@ -1,7 +1,7 @@
 import * as axios from "axios"
 
 let instance = axios.create({
-    baseURL: `http://api.openweathermap.org/data/2.5/`
+    baseURL: `https://api.openweathermap.org/data/2.5/`
 })
 
 export let weatherAPI = {

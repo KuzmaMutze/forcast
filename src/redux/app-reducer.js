@@ -58,7 +58,8 @@ let appReducer = (state = initialState, action) => {
         case SET_ENABLE_PULS: 
             return {
                 ...state,
-                isPuls: action.bool
+                isPuls: action.bool,
+                isWarning: action.bool,
             }
         default:
             return state
