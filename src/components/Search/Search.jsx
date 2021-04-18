@@ -44,11 +44,11 @@ export const Search = (props) => {
 				</Formik>
 			</div>	
 		</div>
-		<div className={classes.enable_search}>
+		{!editMode && <div className={classes.enable_search}>
 			<Fab className={props.isPuls ? classes.pulse : ""} color="primary" onClick={editMode ? () => setEditMode(false) : () => setEditMode(true)} >
 				<SearchIcon/>
 			</Fab>
-		</div>
+		</div>}
 	</>
   )
 };
