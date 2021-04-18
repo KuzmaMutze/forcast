@@ -66,3 +66,22 @@
 .desc:first-letter {
     text-transform:capitalize;
 }
+@media (max-width: 576px) { 
+    .City{
+        &__wrapper{
+            width: 310px;
+            height: 310px;
+
+        }
+    }
+ }
+
+ @media (max-width: 375px) { 
+    .City{
+        &__wrapper{
+            width: 260px;
+            height: 310px;
+
+        }
+    }
+ }

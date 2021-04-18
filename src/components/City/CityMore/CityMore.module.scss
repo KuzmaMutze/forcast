@@ -49,3 +49,18 @@
     text-align: center;
     margin-top: 15%;
 }
+
+@media (max-width: 375px) { 
+    .container{
+        margin: 0;
+    }
+    .btn_close{
+        top: 10px;
+        right: 10px;
+        button{
+            width: 40px;
+            height: 40px;
+        }
+    }
+ }
+
